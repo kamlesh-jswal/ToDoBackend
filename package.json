@@ -1,0 +1,38 @@
+{
+    "name": "todo-backend",
+    "version": "1.0.0",
+    "description": "RESTful ToDo backend with Express, TypeScript, MongoDB",
+    "main": "dist/server.js",
+    "type": "commonjs",
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/server.js",
+        "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+        "lint": "eslint . --ext .ts"
+    },
+    "keywords": [
+        "todo",
+        "express",
+        "typescript",
+        "mongodb"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.0",
+        "express": "^4.18.2",
+        "mongoose": "^7.6.0"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.13",
+        "@types/express": "^4.17.17",
+        "@types/node": "^20.14.7",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-import": "^2.27.5",
+        "prettier": "^3.0.0",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.5.0"
+    }
+}
