@@ -11,7 +11,7 @@ app.use('/api/todos', todoRoutes);
 
 app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
 
-app.use((_req, res) => res.status(404).json({ message: 'Not found' }));
+app.use((_req, res) => res.status(404).json({ message: 'Not found any data' }));
 
 export default app;
 
