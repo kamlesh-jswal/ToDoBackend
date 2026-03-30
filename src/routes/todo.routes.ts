@@ -1,9 +1,10 @@
 import { Router } from 'express';
 import { getTodos, getTodoById, createTodo, updateTodo, deleteTodo } from '../controllers/todo.controller';
+import { authenticate } from '../middleware/auth.middleware';
 
 const router = Router();
 
-router.get('/', getTodos);
+router.get('/getAllTodos', authenticate, getTodos);
 router.get('/:id', getTodoById);
 router.post('/', createTodo);
 router.put('/:id', updateTodo);
