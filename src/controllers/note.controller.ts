@@ -31,7 +31,6 @@ export const createNote = async (req: Request, res: Response) => {
             return res.status(400).json({ message: 'Title and date are required' });
         }
 
-        const currentDate = new Date().toISOString();
         const note = new Note({
             title,
             detail: detail || '',
@@ -41,10 +40,10 @@ export const createNote = async (req: Request, res: Response) => {
         });
 
         await note.save();
-        return res.status(201).json(note);
+        return res.status(201).json({ success: true, message: 'Note created successfully' });
     } catch (error) {
         console.error('Create note error:', error);
-        return res.status(500).json({ message: 'Internal server error' });
+        return res.status(500).json({ success: false, message: 'Internal server error' });
     }
 };
 

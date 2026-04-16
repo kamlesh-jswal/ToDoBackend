@@ -6,8 +6,8 @@ const router = Router();
 
 router.get('/getAllTodos', authenticate, getTodos);
 router.get('/:id', getTodoById);
-router.post('/', createTodo);
-router.put('/:id', updateTodo);
-router.delete('/:id', deleteTodo);
+router.post('/createTodo', createTodo);
+router.put('/updateTodo/:id', updateTodo);
+router.delete('/deleteTodo/:id', deleteTodo);
 
 export default router;

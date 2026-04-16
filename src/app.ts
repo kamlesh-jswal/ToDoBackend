@@ -5,7 +5,7 @@ import authRoutes from './routes/auth.routes';
 import noteRoutes from './routes/note.routes';
 
 const app = express();
-
+console.log("Hello from CI 🚀");
 app.use(cors());
 app.use(express.json());
 

@@ -4,8 +4,14 @@ import { connectDB } from './config/db';
 import config from './config';
 
 const server = http.createServer(app);
-console.log("ENV CHECK:", process.env.MONGODB_URI);
+
 const start = async () => {
+    // ❗ Skip DB + server in CI environment
+    if (process.env.NODE_ENV === "ci") {
+        console.log("Running in CI mode - skipping DB connection and server start");
+        return;
+    }
+
     await connectDB();
 
     server.listen(config.port, () => {

@@ -5,9 +5,9 @@ import { authenticate } from '../middleware/auth.middleware';
 const router = Router();
 
 router.get('/', authenticate, getNotes);
-router.get('/:id', getNoteById);
-router.post('/', createNote);
-router.put('/:id', updateNote);
-router.delete('/:id', deleteNote);
+router.get('/:id', authenticate, getNoteById);
+router.post('/', authenticate, createNote);
+router.put('/:id', authenticate, updateNote);
+router.delete('/:id', authenticate, deleteNote);
 
 export default router;
