@@ -15,7 +15,7 @@ const start = async () => {
     await connectDB();
 
     server.listen(config.port, () => {
-        console.log(`Server listening on port ${config.port}`);
+        console.log(`My Server listening on port ${config.port}`);
     });
 };
 
